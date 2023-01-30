@@ -33,8 +33,8 @@ P.S. для создания конфигурации необходим обр�
 - $ docker-compose -f docker-compose.prod.yml up -d --build
 - $ docker-compose -f docker-compose.prod.yml exec web python manage.py migrate --noinput
 - $ docker-compose -f docker-compose.prod.yml exec web python manage.py collectstatic --no-input --clear
-- http://<ip-adres>/admin/
-- http://<ip-adres>/api/v1/
+- http://<host>/admin/
+- http://<host>/api/v1/
 
 Запуск контейнера разработки без ngix (все изменения в папке app передаются сразу в контейнер)
 - $ docker-compose -f docker-compose.yml up -d --build
