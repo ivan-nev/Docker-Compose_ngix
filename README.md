@@ -21,3 +21,14 @@ P.S. для создания конфигурации необходим обр�
 - Nginx работает в качестве proxy-http для пересылки динамических запросов к Django или возвращая статические html файлы.
 - PostgreSQL запускается до Django.
 - Django запускается через Gunicorn.
+
+необходимо обновить права для файла
+- $ chmod +x app/entrypoint.prod.sh
+
+Остановка контейнера
+- $ docker-compose down -v
+
+Запуск контейнеров
+- $ docker-compose -f docker-compose.prod.yml up -d --build
+- $ docker-compose -f docker-compose.prod.yml exec web python manage.py migrate --noinput
+- $ docker-compose -f docker-compose.prod.yml exec web python manage.py collectstatic --no-input --clear
